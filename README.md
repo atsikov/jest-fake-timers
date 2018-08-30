@@ -25,6 +25,6 @@ clock.restore();
 * **tick(ms)** Advances all scheduled tasks by given milliseconds. Updates Date.now() and performance.now() values.
 * **restore()** Clears all scheduled fale timers. Restores Date.now() and performance.now(). Restores real timers.
 * **runAllTimers()** Runs [jest.runAllTimers()](https://jestjs.io/docs/en/jest-object#jestrunalltimers)
-* **runOnlyPendingTimers** Runs [runOnlyPendingTimers()](https://jestjs.io/docs/en/jest-object#jestrunonlypendingtimers)
-* **runAllTicks** Runs [runAllTicks()](https://jestjs.io/docs/en/jest-object#jestrunallticks)
-* **runAllImmediates** Runs [runAllImmediates()](https://jestjs.io/docs/en/jest-object#jestrunallimmediates)
+* **runOnlyPendingTimers** Runs [jest.runOnlyPendingTimers()](https://jestjs.io/docs/en/jest-object#jestrunonlypendingtimers)
+* **runAllTicks** Runs [jest.runAllTicks()](https://jestjs.io/docs/en/jest-object#jestrunallticks)
+* **runAllImmediates** Runs [jest.runAllImmediates()](https://jestjs.io/docs/en/jest-object#jestrunallimmediates)
