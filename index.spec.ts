@@ -1,4 +1,5 @@
 import { useFakeTimers, FakeTimer } from "./index";
+import { create } from "domain";
 
 describe("FakeTimer", () => {
     describe("useFakeTimers", () => {
@@ -53,6 +54,22 @@ describe("FakeTimer", () => {
 
             clock.restore();
         });
+
+        it("should not throw if performance is unavailable", () => {
+            // GIVEN
+            const perf = performance;
+            let clock: FakeTimer;
+            const createClock = () => clock = useFakeTimers(1, 2);
+
+            // WHEN
+            delete (global as any).performance;
+
+            // THEN
+            expect(createClock).not.toThrow();
+
+            clock.restore();
+            (global as any).performance = perf;
+        });
     });
 
     describe("restore", () => {
@@ -90,6 +107,20 @@ describe("FakeTimer", () => {
 
             // THEN
             expect(performance.now()).not.toEqual(12345);
+        });
+
+        it("should not throw if performance is unavailable", () => {
+            // GIVEN
+            const perf = performance;
+
+            // WHEN
+            delete (global as any).performance;
+            const clock = useFakeTimers(1, 2);
+
+            // THEN
+            expect(() => clock.restore()).not.toThrow();
+
+            (global as any).performance = perf;
         });
     });
 
