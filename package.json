@@ -1,0 +1,33 @@
+{
+  "name": "jest-fake-timers",
+  "version": "1.0.0",
+  "description": "sinon-alike wrapper for jest.useFakeTimers() which adds Date.now() and performane.now() mocking",
+  "main": "dist/index.js",
+  "author": "Aleksei Tsikov <atsikov.dev@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dist": "tsc",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.1",
+    "@types/node": "8",
+    "jest": "^23.5.0",
+    "ts-jest": "^23.1.4",
+    "typescript": "^3.0.3"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
+}
