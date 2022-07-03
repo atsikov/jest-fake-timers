@@ -1,4 +1,7 @@
-### jest-fake-timers
+### [DEPRECATED] jest-fake-timers
+
+> This is a deprecated package, as with modern fake timers jest does a perfect job on mocking Dates
+
 **jest-fake-timers** is a sinon-alike wrapper around jest built-in fake timers, which adds mocking capability for *Date.now()* and *performance.now()*
 ### Usage
 ```
